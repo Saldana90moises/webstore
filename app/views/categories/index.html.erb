@@ -12,6 +12,7 @@
       <table id="tablaCategories" class="table table-bordered" width="100%">
       <thead>
       <tr>
+      <th>Id</th>
       <th>Nombre Categoria</th>
       <th>Descripcon</th>
       <th></th>
@@ -20,6 +21,7 @@
 
       <% @categories.each do |cat| %>
         <tr id="categoria_<%= cat.id %>" >
+        <td><%= cat.id %></td>
         <td><%= cat.name %></td>
         <td><%= cat.keywords %></td>
         <td>

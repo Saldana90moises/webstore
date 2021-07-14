@@ -14,35 +14,36 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :color %>
-    <%= form.text_field :color %>
+    <%= form.text_field :color, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.text_field :size %>
+    <%= form.text_field :size, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, required: true %>
   </div>
 
       <div class="field">
       <%= form.label :category_id %>
-      <%= select_tag "product[category_id]", options_from_collection_for_select(Category.all, :id, :name) %>
+      <%= select_tag "product[category_id]", options_from_collection_for_select(Category.all, :id, :name) , required: true %>
      </div>
 
   <div class="field">
-    <%= form.label :store_elements %>
+    <%= form.label "Store" %>
     <div class="row">
       <% @stores.each do |store| %>
         <label class="col-6 col-sm-4">
-        <%= form.check_box :store_elements, {multiple: true}, store.id, nil %>
+         <%= form.check_box :store_elements, {multiple: true}, store.id, nil %> 
+        <!-- <%= form.check_box :store_elements, {multiple: true}, store.id %> -->
         <%= store.name %>
         </label>
       <% end %>

@@ -1,37 +1,43 @@
-<div class="small-container center-block"> 
-<p id="notice"><%= notice %></p>
+<h1 class="h3 mb-2 text-gray-800">Productos</h1>
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th>Price</th>
-      <th>Categoria</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.color %></td>
-        <td><%= product.size %></td>
-        <td><%= product.price %></td>
-        <td><%= product.id %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
+<div>
+  <%= link_to new_product_path, { class: "btn btn-info", id: "anadir-producto-btn"} do %>
+  <span class="fas fa-plus-square" >Add</span>
+  <% end %>
 </div>
+
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table id="tablaProducts" class="table table-bordered" width="100%">
+      <thead>
+      <tr>
+      <th>Nombre</th>
+      <th>Color</th>
+       <th>Tamaño</th>
+      <th>Precio</th>
+       <th>Categoria</th>
+      <th></th>
+      </thead>
+      <tbody>
+
+      <% @products.each do |pro| %>
+        <tr id="prore_<%= pro.id %>" >
+        <td><%= pro.name %></td>
+        <td><%= pro.color %></td>
+        <td><%= pro.size %></td>
+        <td><%= pro.price %></td>
+        <td><%= pro.category_id %></td>
+        <td>
+        <%= link_to 'Edit', edit_product_path(pro) , html_options = {Class: "btn btn-info btn-xs"} %>
+        <%= link_to "borrar", pro, remote: true, method: :delete, data:  { confirm: "¿Borrar producto: #{pro.name}?"}, class: "btn btn-danger btn-xs" %>
+        </td>
+        </tr>
+      <% end %>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
