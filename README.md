@@ -1,5 +1,10 @@
 # README
 
+Resolucion de prueba de Just Media Group
+
+Postulante: Nelson Moises Saldaña Perez
+
+
 Restaurar la base de datos en postgresql 
 name: webstore_development
 
