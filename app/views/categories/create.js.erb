@@ -1,0 +1,4 @@
+$('#modalCategories').modal('toggle');
+$('#tablaCategories').append(
+    '<tr id="categoria_<%= @category.id %>" ><td><%= @category.name %></td><td><%= @category.keywords %></td><td><%= link_to 'editar', edit_category_path(@category), html_options = {class: "btn btn-info btn-xs", remote: true} %> <%= link_to "Borrar", @category, remote: true, method: :delete, data: { confirm: "¿Borrar categoria: #{@category.name}?"}, class: "btn btn-danger btn-xs" %></td></tr>'
+);
