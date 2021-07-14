@@ -1,6 +1,6 @@
 # README
 
-Resolucion de prueba de Just Media Group
+Resolución de prueba de Just Media Group
 
 Postulante: Nelson Moises Saldaña Perez
 
